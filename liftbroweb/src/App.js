@@ -1,27 +1,27 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-
+import Workouts from './Components/Workouts.js'
+import {Panel} from 'react-bootstrap';
+import {Table} from 'react-bootstrap';
+import {PanelGroup} from 'react-bootstrap';
 class App extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      isVisible: false,
+    };
+}
   render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
-    );
+    return (<div id = "App">
+      <Workouts name = "BRO" />
+      </div>);
+    ;
+  }
+  updateModal(isVisible) {
+    this.state.isVisible = isVisible;
+    this.forceUpdate();
   }
 }
 
